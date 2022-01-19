@@ -1,0 +1,18 @@
+{
+  "DOMAIN": "https://pastebin.com",
+  "ROOT_URL_PATH": "/archive",
+  "INTERVAL_AMOUNT": 2,
+  "INTERVAL_UNITS":"minutes",
+  "links_list_css_selector":".archive-table table.maintable td:not([class]) a",
+  "data_model_to_extract":{
+    "Author": { "css_selector": ".username a", "output_type": "text" },
+    "Title": { "css_selector": ".info-bar .info-top h1", "output_type": "text" },
+    "Content": { "css_selector": ".source", "output_type": "html_content" },
+    "Date": {
+    "css_selector": ".date span",
+      "output_type": "attrib",
+      "attrib": "title"
+    }
+  }
+
+}
